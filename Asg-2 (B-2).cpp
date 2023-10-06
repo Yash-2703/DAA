@@ -1,3 +1,13 @@
+/*
+---------------------------------------------------------------------------------------------------------------------------------------------
+Problem Statement : Implement a problem of maximize Profit by trading stocks based on given rate per day.
+                    -Given an array arr[] of N positive integers which denotes the cost of selling and buying a stock on 
+                     each of the N days. The task is to find the maximum profit that can be earned by buying a stock on or selling 
+                     all previously bought stocks on a particular day.
+---------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
 #include <iostream>
 #include <vector>
 

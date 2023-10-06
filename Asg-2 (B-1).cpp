@@ -1,3 +1,15 @@
+/*
+---------------------------------------------------------------------------------------------------------------------------------------------
+Problem Statement: Implement a problem of activity selection problem with K persons.
+                    -Given two arrays S[] and E[] of size N denoting starting and closing time of the shops and an integer value K denoting the 
+                     number of people, the task is to find out the maximum number of shops they can visit in total if they visit each shop optimally based 
+                     on the following conditions:
+                     1) A shop can be visited by only one person
+                     2) A person cannot visit another shop if its timing collide with it.
+---------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
