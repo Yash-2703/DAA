@@ -1,25 +1,42 @@
-def find_smallest_number_with_trailing_zeros(n):
-    def count_trailing_zeros(num):
-        count = 0
-        while num % 10 == 0:
-            count += 1
-            num //= 10
-        return count
+#include <iostream>
+using namespace std;
 
-    def factorial_zeros(num):
-        zeros = 0
-        divisor = 5
-        while num >= divisor:
-            zeros += num // divisor
-            divisor *= 5
-        return zeros
+// Function to count the number of trailing zeroes in a number
+int countTrailingZeroes(int num) {
+    int count = 0;
+    while (num % 10 == 0) {
+        count++;
+        num /= 10;
+    }
+    return count;
+}
 
-    left, right = 0, n * 5  # Set an initial search range
-    while left < right:
-        mid = (left + right) // 2
-        if factorial_zeros(mid) < n:
-            left = mid + 1
-        else:
-            right = mid
+// Function to find the smallest number whose factorial contains at least n trailing zeroes
+int findSmallestNumber(int n) {
+    if (n <= 0) return 1;
 
-    return left
+    int low = 0, high = 5 * n;
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+        int trailingZeroes = countTrailingZeroes(mid);
+
+        if (trailingZeroes < n) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+    }
+
+    return low;
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    int smallestNumber = findSmallestNumber(n);
+    cout << "The smallest number whose factorial contains at least " << n << " trailing zeroes is: " << smallestNumber << endl;
+
+    return 0;
+}
